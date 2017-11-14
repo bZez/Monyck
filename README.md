@@ -5,7 +5,7 @@ Exercice N°8 // Système d'appel d'offre basé sur le framework MVC du projet '
 Visuel de la structure de la base de donnèes [Disponible en .sql](
 https://raw.githubusercontent.com/bZez/Monycks/blob/master/monyckDB.sql)
 
-![APERCU](https://raw.githubusercontent.com/bZez/Monyck/master/Screenshot-2017-11-12%20Monycks.png)
+![APERCU](https://raw.githubusercontent.com/bZez/Monyck/step2/Screenshot-2017-11-14%20Monycks.png)
 
 # DEMO
 Soon
