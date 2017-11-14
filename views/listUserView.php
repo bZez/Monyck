@@ -12,11 +12,11 @@ include ('views/headers/default.php');
 <?php
 require ('models/users.php');
 foreach(getUsersList($bdd) as $rs) {
-        echo '<h2>#'.$rs['id'].' '.$rs['login'].'</h2>
-              <h3>'.$rs['credit'].' Ⓜ</h3>
-              <h4>'.$rs['firstname'].' '.$rs['lastname'].'</h4>
-              <h5>Skills<br>'.$rs['skillname'].'</h5>
-              <h6>'.$rs['email'].'</h6>';
+        echo '<h2>#'.$rs['id'].' '.$rs['login'].' <a href="/'.$project_name.'/index.php?user=edit&id='.$rs['id'].'">x</a></h2>
+              <h6>'.$rs['bdate'].'</h6>
+              <h3>'.$rs['multitype'].'</h3>
+              <h4>'.$rs['fname'].' '.$rs['lname'].'</h4>
+              <h6>'.$rs['mail'].'</h6>';
     }
 ?>
 

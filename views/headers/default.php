@@ -12,6 +12,7 @@
 <h3>
     <a href="<?php $project_name ?>index.php">Home</a>
     <a href="<?php $project_name ?>index.php?user=list">Users</a>
+    <a href="<?php $project_name ?>index.php?type=list">Userstype</a>
     <a href="<?php $project_name ?>index.php?ticket=list">Tickets</a>
     <a href="<?php $project_name ?>index.php?transfer=list">$$$</a>
 </h3>
