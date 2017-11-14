@@ -3,7 +3,7 @@ include ('views/headers/default.php');
 require ('models/users.php');
 ?>
 
-    <h3>Ajouter un ticket</h3>
+    <h3>Create new ticket</h3>
     <form id='createticket' class="form-inline" method="POST">
         <label>Description:</label><br>
         <input class="form-control" type="text" name='description' placeholder="Détails..."><br><br>

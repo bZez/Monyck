@@ -15,6 +15,12 @@ else if  (isset($_GET['transfer']) && $_GET['transfer'] != null) {
     include('controllers/transferController.php');
     echo "<br>Controlleur Transfer avec la valeur: ". $_GET['transfer']."";
 }
+
+else if  (isset($_GET['type']) && $_GET['type'] != null) {
+    include('controllers/typeController.php');
+    echo "<br>Controlleur Transfer avec la valeur: ". $_GET['type']."";
+}
+
 else {
     include('views/indexView.php');
 }

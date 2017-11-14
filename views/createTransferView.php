@@ -2,7 +2,7 @@
 include ('views/headers/default.php');
 ?>
 
-    <h3>Transferts</h3>
+    <h3>Transfers</h3>
     <form id='createtransfer' class="form-inline" method="POST">
 
         <label>Receiver:</label><br>
