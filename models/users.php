@@ -26,12 +26,19 @@ FROM users u, user_type_user utu, users_type ut
 WHERE u.id=utu.id_user 
 AND ut.id_type=utu.id_user_type 
 GROUP BY ut.id_type");
-    return $result;
-}
+    if (mysqli_num_rows($result) == 0) {
+        getUserTypeList($bdd);
+    } else { return $result;}
+    }
 
 function getOneUser($bdd, $id)
 {
-    $result = $bdd->query("SELECT * FROM users WHERE id=$id");
+    $result = $bdd->query("SELECT u.*,utu.*,ut.*, GROUP_CONCAT(ut.type SEPARATOR ' <br> ') multitype 
+FROM users u, user_type_user utu, users_type ut 
+WHERE u.id=utu.id_user 
+AND ut.id_type=utu.id_user_type
+AND u.id=$id 
+GROUP BY u.id");
     return $result;
 }
 
@@ -75,10 +82,10 @@ function addTypeToUser($bdd, $uid, $tid)
 }
 
 
-function editUser($bdd, $id, $l, $fn, $ln, $bd, $m, $pw)
+function editUser($bdd, $id, $l/*, $fn, $ln, $bd, $m, $pw*/)
 {
     $bdd->query("UPDATE users 
-SET login = '" . $l . "', fname = '" . $fn . "', lname = '" . $ln . "',bdate = '" . $bd . "',mail = '" . $m . "',pw = '" . $pw . "'  
+SET login = '" . $l . "'
 WHERE users.id=$id");
 }
 

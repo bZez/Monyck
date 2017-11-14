@@ -20,16 +20,9 @@ if (isset($user)) {
     foreach (getOneUser($bdd, $user) as $rs) {
         echo '<input name="id" type="hidden" value=' . $rs['id'] . '>
               <h2>#' . $rs['id'] . '<input name="login" type="text" value=' . $rs['login'] . '><br></h2>
+              <h3>'.$rs['multitype'].'</h3>
               <h4>' . $rs['fname'] . ' ' . $rs['lname'] . '</h4>
-              <h5>User type:<br>
-              <select multiple class="form-control" name="type">';
-        foreach (getUserTypeList($bdd, $rs['id']) as $ty) {
-            echo '<option value="' . $ty['id'] . '" selected="selected">' . $ty['type'] . '</option>';
-        }
-        ?>
-        </select>
-        <?php
-        echo '<h6>' . $rs['mail'] . '</h6>';
+              <h6>' . $rs['mail'] . '</h6>';
     }
     ?>
     <input type="submit" value="Save" name="save" formaction="index.php?user=editAction">

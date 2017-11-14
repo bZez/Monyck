@@ -8,9 +8,9 @@ $ln=$_POST["lname"];
 $bd=$_POST["bdate"];
 $m=$_POST["mail"];
 $pw=$_POST["pw"];
-$tid= implode(" <br> ",$_POST['type']);
+
 //Fonction createUser() exécute la requête !
-editUser($bdd,$id,$l,$fn,$ln,$bd,$m,$pw);
+editUser($bdd,$id,$l);
 
 $_SESSION['flash'] = '<h1>User '.$_POST['login'].' édité avec succès !</h1>';
 
