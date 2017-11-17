@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: michael
+ * Date: 16/11/17
+ * Time: 13:26
+ */
 
 switch ($_GET['ticket']) {
     case "create":
@@ -13,12 +19,24 @@ switch ($_GET['ticket']) {
         include ('views/listTicketView.php');
         break;
 
-    //Actions
-    case "createAction":
-        include ('views/createTicketAction.php');
+    case "view":
+        include ('views/viewTicketView.php');
         break;
 
+    //Actions
+    case "createAction":
+        include ('do/tickets/createTicketAction.php');
+        break;
+
+    case "editAction":
+        include ('do/tickets/editTicketAction.php');
+        break;
+
+    case "deleteAction":
+        include ('do/tickets/deleteTicketAction.php');
+        break;
 
     default:
         echo "<p style='font-size:99vh'>_404</p>";
 }
+

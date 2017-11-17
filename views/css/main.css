@@ -1,0 +1,59 @@
+body {
+    text-align: center;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color:darkred;
+}
+
+.inblock{
+    width:100%;
+    min-height: 100%;
+    background: gray;
+}
+
+.userblock {
+    width: 18%;
+    min-height: 300px;
+}
+
+.logo {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.userblock, .typeblock {
+
+    background: lightgrey;
+    float: left;
+    margin: 1%;
+    border-radius: 5px;
+}
+
+.typeblock {
+    width: 31.3%;
+    min-height: 100px;
+    overflow: hidden;
+}
+
+.userblock:hover, .typeblock:hover {
+    transform: scale(1.05);
+}
+
+
+footer {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: lightgrey;
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+}

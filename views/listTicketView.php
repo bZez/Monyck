@@ -1,25 +1,31 @@
 <?php
-include ('views/headers/default.php');
+/**
+ * Created by PhpStorm.
+ * User: michael
+ * Date: 16/11/17
+ * Time: 13:17
+ */
+
+include('views/headers/login.php');
 ?>
 
-    <h4>
-        <a href="<?php $project_name ?>index.php?ticket=create">Create</a>
-        <a href="<?php $project_name ?>index.php?ticket=edit">Edit</a>
-    </h4>
+<h4>≡
+    <a href="<?php $project_name ?>index.php?skill=list">Skills</a> ≡
+    <a href="<?php $project_name ?>index.php?ticket=create">+ Add ticket</a> ≡
+
+</h4>
+
+<?php messageFlash(); ?>
 
 <?php
-require ('models/tickets.php');
-foreach(getTicketList($bdd) as $tk) {
-    coloredStatus($tk,$tk['#status']);
-echo '<h2>'.$tk['firstname'].'</h2>
-              <h4>Skills<br>'.$tk['skillname'].'</h4>
-              <h3>'.$tk['#amount'].' Ⓜ</h3>
-              <h5>'.$tk['description'].'</h5>
-              <input type="button" value="I can do it !"> ';
+require('models/tickets.php');
+foreach (getTickets($bdd) as $tk) {
+    echo '<hr><h2>#' . $tk['id'] . ' ' . $tk['title'] . ' 
+          <a href="/' . $project_name . '/index.php?ticket=edit&id=' . $tk['id'] . '">✎</a>
+          <a href="/' . $project_name . '/index.php?ticket=deleteAction&id=' . $tk['id'] . '">×</a></h2><br>
+          ' . $tk['description'] . '<br><br>
+          <strong>Creation date:</strong><br>' . $tk['creationDate'] .'<br>
+          <strong>Expiration time:</strong><br>' . $tk['expTime'] .'<br><br>
+          <strong>Posted by:</strong><br>'.$tk['login'].'';
 }
-?>
-
-
-<?php
-include ('views/footers/default.php');
 ?>

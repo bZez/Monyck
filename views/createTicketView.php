@@ -1,32 +1,41 @@
 <?php
-include ('views/headers/default.php');
-require ('models/users.php');
+include('models/tickets.php');
+include('views/headers/login.php');
 ?>
 
-    <h3>Ajouter un ticket</h3>
-    <form id='createticket' class="form-inline" method="POST">
-        <label>Description:</label><br>
-        <input class="form-control" type="text" name='description' placeholder="Détails..."><br><br>
-        <label>User:</label><br>
-        <select class="form-control" name='skills'>
-            <?php
-            foreach(getUsersList($bdd) as $us) {
-                echo '<option value="'.$us['id'].'">'.$us['firstname'].'</option>';
-            }
-            ?>
-        </select><br><br>
-        <label>Skills:</label><br>
-        <select class="form-control" name='skills'>
-            <?php
-            foreach(getSkillsList($bdd) as $sk) {
-                echo '<option value="'.$sk['id'].'">'.$sk['skillname'].'</option>';
-            }
-            ?>
-        </select><br><br>
+<form method="post" action="index.php?ticket=createAction">
 
-        <input class="btn btn-primary" type="submit" value="Ajouter !">
-    </form>
+    <p>
+        <label for="title">Title:</label><br>
+        <input type="text" name="title" id="title">
+    </p>
 
-<?php
-include ('views/footers/default.php');
-?>
+    <p>
+        <label for="description">Description:</label><br>
+        <textarea type="text" name="description" id="description"></textarea>
+    </p>
+
+    <p>
+        <label for="creationDate">Creation date:</label><br>
+        <input type="date" name="creationdate" id="creationdate" value="<?php echo date('Y-m-d'); ?>">
+    </p>
+
+    <p>
+        <label for="expTime">Expiration time:</label><br>
+        <input type="date" name="exptime" id="exptime">
+    </p>
+    <label>Skills:</label><br>
+    <select name='id_skill' id="id_skill">
+        <?php setLists($bdd, 'skills', 'language', false); ?>
+    </select>
+    <br><br>
+
+
+<br><br>
+
+
+    <input type="submit" value="submit">
+
+</form>
+</body>
+</html>

@@ -3,10 +3,14 @@
 require ('models/users.php');
 $id=$_POST['id'];
 $l=$_POST["login"];
-$sk=$_POST["skills"];
-$c=$_POST["credit"];
+$fn=$_POST["fname"];
+$ln=$_POST["lname"];
+$bd=$_POST["bdate"];
+$m=$_POST["mail"];
+$pw=$_POST["pw"];
+
 //Fonction createUser() exécute la requête !
-editUser($bdd,$id,$l,$c,$sk);
+editUser($bdd,$id,$l);
 
 $_SESSION['flash'] = '<h1>User '.$_POST['login'].' édité avec succès !</h1>';
 

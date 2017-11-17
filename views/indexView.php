@@ -1,9 +1,4 @@
 <?php
-include ('views/headers/default.php');
-?>
+include('views/headers/login.php');
 
-<strong>SOON</strong>
-
-<?php
-include ('views/footers/default.php');
-?>
+include('views/footers/default.php');
