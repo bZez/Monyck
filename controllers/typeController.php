@@ -2,32 +2,39 @@
 
 switch ($_GET['type']) {
     case "create":
-        include('views/createUserTypeView.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('views/admin/createUserTypeView.php');
         break;
 
     case "userlist":
-        include('views/listUserTypeAndUserView.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('views/admin/listUserTypeAndUserView.php');
         break;
 
     case "list":
-        include('views/listUserTypeView.php');
+        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        include('views/admin/listUserTypeView.php');
         break;
 
 
     case "edit":
-        include('views/editUserTypeView.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('views:admin/editUserTypeView.php');
         break;
 
     //Actions
     case "createAction":
+        checkPermission('Bankist(s),Insurer(s)');
         include('do/usertypes/createUserTypeAction.php');
         break;
 
     case "editAction":
+        checkPermission('Bankist(s),Insurer(s)');
         include('do/usertypes/editUserTypeAction.php');
         break;
 
     case "deleteAction":
+        checkPermission('Bankist(s),Insurer(s)');
         include('do/usertypes/deleteUserTypeAction.php');
         break;
 

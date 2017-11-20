@@ -1,6 +1,6 @@
 <?php
+include('views/headers/default.php');
 include('models/offers.php');
-include('views/headers/login.php');
 include('models/users.php');
 ?>
     <h3>Create new offer</h3>

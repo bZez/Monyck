@@ -20,4 +20,4 @@ createTicket($bdd,$tt,$ds,$cd,$et,$idu,$ids);
 
 $_SESSION['flash'] = '<h1>Ticket '.$_POST['title'].' created with succes !</h1>';
 
-header('Location:/'.$project_name.'/index.php?ticket=list');
+header('Location:/'.$project_path.'/index.php?ticket=list');

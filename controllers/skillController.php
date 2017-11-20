@@ -2,28 +2,34 @@
 
 switch ($_GET['skill']) {
     case "create":
-        include('views/createSkillView.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('views/admin/createSkillView.php');
         break;
 
     case "edit":
-        include('views/editSkillView.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('views/admin/editSkillView.php');
         break;
 
     case "list":
+        checkPermission('Customer(s),Bankist(s),Insurer(s)');
         include('views/listSkillView.php');
         break;
 
 
     //Actions
     case "createAction":
+        checkPermission('Bankist(s),Insurer(s)');
         include('do/skills/createSkillAction.php');
         break;
 
     case "editAction":
+        checkPermission('Bankist(s),Insurer(s)');
         include('do/skills/editSkillAction.php');
         break;
 
     case "deleteAction":
+        checkPermission('Bankist(s),Insurer(s)');
         include('do/skills/deleteSkillAction.php');
         break;
 

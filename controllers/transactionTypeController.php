@@ -2,29 +2,34 @@
 
 switch ($_GET['transType']) {
     case "create":
-        include ('views/createTransactionTypeView.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('views/admin/createTransactionTypeView.php');
         break;
 
     case "edit":
-        include ('views/editTransactionTypeView.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('views/admin/editTransactionTypeView.php');
         break;
 
     case "list":
-        include ('views/listTransactionTypeView.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('views/admin/listTransactionTypeView.php');
         break;
-
 
     //Actions
     case "createAction":
-        include ('do/transactionTypes/createTransactionTypeAction.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('do/transactionTypes/createTransactionTypeAction.php');
         break;
 
     case "editAction":
-        include ('do/transactionTypes/editTransactionTypeAction.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('do/transactionTypes/editTransactionTypeAction.php');
         break;
 
     case "deleteAction":
-        include ('do/transactionTypes/deleteTransactionTypeAction.php');
+        checkPermission('Bankist(s),Insurer(s)');
+        include('do/transactionTypes/deleteTransactionTypeAction.php');
         break;
 
     default:

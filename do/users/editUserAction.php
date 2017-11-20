@@ -14,4 +14,4 @@ editUser($bdd,$id,$l);
 
 $_SESSION['flash'] = '<h1>User '.$_POST['login'].' édité avec succès !</h1>';
 
-header('Location:/'.$project_name.'/index.php?user=list');
+header('Location:/'.$project_path.'/index.php?user=list');

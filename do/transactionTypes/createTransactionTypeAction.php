@@ -8,7 +8,7 @@ createTransactionTypes($bdd, $type);
 
 $_SESSION['flash'] = '<h1>Transaction type '.$_POST['type'].' créé avec succès !</h1>';
 
-header('Location:/'.$project_name.'/index.php?transType=list');
+header('Location:/'.$project_path.'/index.php?transType=list');
 
 
 

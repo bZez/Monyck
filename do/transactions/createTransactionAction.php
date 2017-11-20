@@ -14,7 +14,7 @@ createTransaction($bdd, $amount, $transfertDate, $transactionType, $comment, $id
 
 $_SESSION['flash'] = '<h1>Transaction '.$_POST['comment'].' créé avec succès !</h1>';
 
-header('Location:/'.$project_name.'/index.php?transaction=list');
+header('Location:/'.$project_path.'/index.php?transaction=list');
 
 
 

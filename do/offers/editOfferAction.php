@@ -14,4 +14,4 @@ updateOffer($bdd, $id, $am, $ex, $in, $ids);
 
 $_SESSION['flash'] = '<h1>Offer '.$id.' successfully edited !</h1>';
 
-//header('Location:/'.$project_name.'/index.php?offer=list');
+header('Location:/'.$project_name.'/index.php?offer=list');

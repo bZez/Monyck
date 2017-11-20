@@ -12,41 +12,23 @@ a:hover {
     color:darkred;
 }
 
-.inblock{
-    width:100%;
-    min-height: 100%;
-    background: gray;
-}
-
-.userblock {
-    width: 18%;
-    min-height: 300px;
-}
-
-.logo {
-    width: 300px;
-    height: 300px;
+.loginblock {
+    width: 250px;
+    height: 330px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: white;
+    box-shadow: 0 0 500px rgba(0,0,0,.5);
     border-radius: 10px;
 }
-
-.userblock, .typeblock {
-
-    background: lightgrey;
-    float: left;
-    margin: 1%;
-    border-radius: 5px;
+.loginblock div {
+    padding: 25px 0;
+    line-height: 50px;
 }
-
-.typeblock {
-    width: 31.3%;
-    min-height: 100px;
-    overflow: hidden;
-}
-
-.userblock:hover, .typeblock:hover {
-    transform: scale(1.05);
-}
-
 
 footer {
     width: 100%;

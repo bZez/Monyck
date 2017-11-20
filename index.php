@@ -3,6 +3,7 @@
 include('config.php');
 include('functions.php');
 
+
 if (isset($_GET['user']) && $_GET['user'] != null) {
     include('controllers/userController.php');
 } else if (isset($_GET['type']) && $_GET['type'] != null) {
@@ -15,11 +16,15 @@ if (isset($_GET['user']) && $_GET['user'] != null) {
     include('controllers/skillController.php');
 } else if (isset($_GET['transaction']) && $_GET['transaction'] != null) {
     include('controllers/transactionController.php');
-}else if (isset($_GET['transType']) && $_GET['transType'] != null) {
+} else if (isset($_GET['transType']) && $_GET['transType'] != null) {
     include('controllers/transactionTypeController.php');
-}else if (isset($_GET['logout'])) {
-   session_destroy();
-   header('Location:index.php');
+} else if (isset($_GET['logout'])) {
+    session_destroy();
+    header('Location:index.php');
+} else if (isset($_GET['login'])) {
+    include('views/loginUserView.php');
 } else {
     include('views/indexView.php');
 }
+
+

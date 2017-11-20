@@ -27,17 +27,12 @@ function setLists($bdd, $tableName, $displayField, $withTitle = false, $selected
     }
 }
 
-function checkSession($bdd){
-    $result= $bdd->query("SELECT * FROM users
-                          WHERE email='".$_SESSION['email']."'
-                          AND password='".$_SESSION['password']."'");
-    $line=$result->fetch_assoc();
-    $_SESSION['id']=$line['id'];
-    $_SESSION['login']=$line['login'];
-    if($result->num_rows >0){
-        return true;
-    }
-    else {
-        return false;
+function checkPermission($role)
+{
+
+    if (strpos($role, $_SESSION['role']) !== false) {
+    } else if (strpos($role, 'Guest(s)') !== false) {
+    } else {
+        header('Location:/Monycks/index.php?login');
     }
 }

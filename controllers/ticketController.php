@@ -1,38 +1,39 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: michael
- * Date: 16/11/17
- * Time: 13:26
- */
 
 switch ($_GET['ticket']) {
     case "create":
-        include ('views/createTicketView.php');
+        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+            include('views/createTicketView.php');
         break;
 
     case "edit":
-        include ('views/editTicketView.php');
+        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+            include('views/editTicketView.php');
         break;
 
     case "list":
+        checkPermission('Customer(s),Bankist(s),Insurer(s)');
         include ('views/listTicketView.php');
         break;
 
     case "view":
+        checkPermission('Customer(s),Bankist(s),Insurer(s)');
         include ('views/viewTicketView.php');
         break;
 
     //Actions
     case "createAction":
+        checkPermission('Customer(s),Bankist(s),Insurer(s)');
         include ('do/tickets/createTicketAction.php');
         break;
 
     case "editAction":
+        checkPermission('Customer(s),Bankist(s),Insurer(s)');
         include ('do/tickets/editTicketAction.php');
         break;
 
     case "deleteAction":
+        checkPermission('Customer(s),Bankist(s),Insurer(s)');
         include ('do/tickets/deleteTicketAction.php');
         break;
 

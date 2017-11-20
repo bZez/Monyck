@@ -9,4 +9,4 @@ echo $t;
 
 $_SESSION['flash'] = '<h1>Usertype '.$_POST['type'].' created with succes !</h1>';
 
-header('Location:/'.$project_name.'/index.php?type=list');
+header('Location:/'.$project_path.'/index.php?type=list');

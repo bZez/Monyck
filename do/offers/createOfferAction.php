@@ -12,4 +12,4 @@ createOffer($bdd,$am,$ex,$in,$idt,$iuo,$ids);
 
 $_SESSION['flash'] = '<h1>Offer of'.$am.' succesfully added !</h1>';
 
-header('Location:/'.$project_name.'/index.php?offer=list');
+header('Location:/'.$project_path.'/index.php?offer=list');

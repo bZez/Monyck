@@ -6,5 +6,5 @@ deleteOffer($bdd,$id);
 
 $_SESSION['flash'] = '<h1>Offer '.$id.' succesfully deleted !</h1>';
 
-header('Location:/'.$project_name.'/index.php?offer=list');
+header('Location:/'.$project_path.'/index.php?offer=list');
 

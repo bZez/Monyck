@@ -15,6 +15,6 @@ editTransaction($bdd, $id, $amount, $transferDate, $transactionType, $comment, $
 
 $_SESSION['flash'] = '<h1>Transaction successfully edited !</h1>';
 
-header('Location:/'.$project_name.'/index.php?transaction=list');
+header('Location:/'.$project_path.'/index.php?transaction=list');
 
 

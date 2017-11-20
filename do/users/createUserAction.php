@@ -19,4 +19,4 @@ createUser($bdd, $l, $fn, $ln, $bd, $m, $pw, $tid);
 
 $_SESSION['flash'] = '<h1>User '.$_POST['login'].' créé avec succès !</h1>';
 
-header('Location:/'.$project_name.'/index.php?user=list');
+header('Location:/'.$project_path.'/index.php?user=list');

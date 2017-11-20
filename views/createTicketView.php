@@ -1,6 +1,6 @@
-<?php
+z<?php
 include('models/tickets.php');
-include('views/headers/login.php');
+include('views/headers/default.php');
 ?>
 
 <form method="post" action="index.php?ticket=createAction">

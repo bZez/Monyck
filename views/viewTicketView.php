@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: michael
- * Date: 16/11/17
- * Time: 13:17
- */
 
-include('views/headers/login.php');
+include('views/headers/default.php');
 
 if (isset($_GET['id'])) {
     $ticket = $_GET['id'];
@@ -16,9 +10,9 @@ if (isset($_GET['id'])) {
 ?>
 
 
-<h4>
-    <a href="<?php $project_name ?>index.php?ticket=create">+ Add ticket</a>
-
+<h4><?php if(checkPermission('Customer(s),Bankist(s),Insurer(s)')) {?>
+    <a href="<?php $project_path ?>index.php?ticket=create">+ Add ticket</a>
+<?php } ?>
 </h4>
 
 <?php messageFlash(); ?>
@@ -27,8 +21,8 @@ if (isset($_GET['id'])) {
 require('models/tickets.php');
 foreach (getOneTicket($bdd, $ticket) as $tk) {
 echo '<hr><h2>#' . $tk['id'] . ' ' . $tk['title'] . ' 
-          <a href="/' . $project_name . '/index.php?ticket=edit&id=' . $tk['id'] . '">✎</a>
-          <a href="/' . $project_name . '/index.php?ticket=deleteAction&id=' . $tk['id'] . '">×</a></h2><br>
+          <a href="/' . $project_path . '/index.php?ticket=edit&id=' . $tk['id'] . '">✎</a>
+          <a href="/' . $project_path . '/index.php?ticket=deleteAction&id=' . $tk['id'] . '">×</a></h2><br>
           ' . $tk['description'] . '<br><br>
           <strong>Creation date:</strong><br>' . $tk['creationDate'] .'<br>
           <strong>Expiration time:</strong><br>' . $tk['expTime'] .'<br><br>

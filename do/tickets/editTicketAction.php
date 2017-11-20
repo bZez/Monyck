@@ -13,5 +13,5 @@ editTicket($bdd,$id,$tl,$ds,$cd,$et,$iu,$is);
 
 $_SESSION['flash'] = '<h1>Ticket '.$_POST['title'].' édité avec succès !</h1>';
 
-header('Location:/'.$project_name.'/index.php?ticket=list');
+header('Location:/'.$project_path.'/index.php?ticket=list');
 

@@ -1,5 +1,5 @@
 <?php
-include('views/headers/login.php');
+include('views/headers/default.php');
 require('models/tickets.php');
 
 if (isset($_GET['id'])) {
@@ -27,7 +27,7 @@ if (isset($ticket)) {
     }
     ?>
     <input type="submit" value="Save" name="save" formaction="index.php?ticket=editAction"">
-    <input type="submit" value="Delete" name="delete" formaction="/<?php echo $project_name.'/index.php?ticket=deleteAction&id='.$rs['id'] ?>">
+    <input type="submit" value="Delete" name="delete" formaction="/<?php echo $project_path.'/index.php?ticket=deleteAction&id='.$rs['id'] ?>">
     </form>
     <?php
 }
