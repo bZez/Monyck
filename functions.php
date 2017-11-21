@@ -31,7 +31,7 @@ function checkPermission($role)
 {
 
     if (strpos($role, $_SESSION['role']) !== false) {
-    } else if (strpos($role, 'Guest(s)') !== false) {
+    } else if (strpos($role, 'Guest(s) ') !== false) {
     } else {
         header('Location:/Monycks/index.php?login');
     }

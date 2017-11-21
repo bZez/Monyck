@@ -53,7 +53,7 @@ function getTicketsOffers($bdd)
 
 function getOneOffer($bdd,$id) {
     $result = $bdd->query("SELECT DISTINCT u.id, u.login, t.*,o.id AS ido,o.*,s.*
-    FROM users u, tickets t, offers o, status s,reports r
+    FROM users u, tickets t, offers o, status s
     WHERE u.id=t.id_user_ticket
     AND t.id=o.id_ticket
     AND s.id=o.id_status

@@ -39,7 +39,7 @@ if (isset($offer)) {
         <?php
     }
     ?>
-    <input type="submit" value="Save" name="save" formaction="index.php?offer=editAction">
+    <input type="submit" value="Save" name="save" formaction="/<?php echo $project_path ?>/index.php?offer=editAction">
     <input type="submit" value="x Delete" name="delete"
            formaction="/<?php echo $project_path . '/index.php?offer=deleteAction&id=' . $offer ?>">
     </form>
