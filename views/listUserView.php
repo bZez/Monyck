@@ -8,7 +8,7 @@
 
 <?php
 foreach (getUsers($bdd) as $rs) {
-    echo '<h2>#' . $rs['id'] . ' ' . $rs['login'] . ' <a href="' . $project_path . 'index.php?user=edit&id=' . $rs['id'] . '">✎</a>
+    echo '<hr><h2>#' . $rs['id'] . ' ' . $rs['login'] . ' <a href="' . $project_path . 'index.php?user=edit&id=' . $rs['id'] . '">✎</a>
               <a href="' . $project_path . 'index.php?user=deleteAction&id=' . $rs['id'] . '">×</a></h2>
               <h3>' . $rs['birthday'] . '</h3>';
     foreach (getTypeByUsers($bdd,$rs['id']) as $rs2) {
