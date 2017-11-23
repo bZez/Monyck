@@ -1,6 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/transactions.php');
 
 if (isset($_GET['id'])) {
     $transac = $_GET['id'];
@@ -61,5 +59,4 @@ if (isset($transac)) {
         <?php
     }
 }
-include('views/footers/default.php');
 ?>

@@ -1,12 +1,9 @@
-<?php
-include('views/headers/default.php');
-?>
 
-    <h4>
-        <a href="<?php $project_path ?>index.php?offer=reported">Reported</a>
-        <a href="<?php $project_path ?>index.php?offer=create">+ Add offer</a>
+<h4>
+    <a href="<?php $project_path ?>index.php?offer=reported">Reported</a>
+    <a href="<?php $project_path ?>index.php?offer=create">+ Add offer</a>
 
-    </h4>
+</h4>
 
 <?php messageFlash(); ?>
 
@@ -21,10 +18,7 @@ foreach (getTicketsOffers($bdd) as $of) {
               <h2>Reward:<br>' . $of['amount'] . '</h2>
               <h3>Allowed time<br>' . $of['execTime'] . '</h3>
               <h4>Insurance:<br>' . $of['insurance'] . '</h4>
-              <h6><a href="/' . $project_path . '/index.php?ticket=view&id=' . $of['id_ticket'] . '">View ticket</a></h6>';
+              <h6><a href="/' . $project_path . '/index.php?ticket=view&id=' . $of['id_ticket'] . '">View ticket</a></h6>
+              <h6><a href="/' . $project_path . '/index.php?offer=report&id=' . $of['ido'] . '">Report this</a></h6>';
 }
-?>
-
-<?php
-include('views/footers/default.php');
 ?>

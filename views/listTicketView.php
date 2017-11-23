@@ -1,8 +1,3 @@
-<?php
-
-include('views/headers/default.php');
-?>
-
 <h4>≡
     <a href="<?php $project_path ?>index.php?skill=list">Skills</a> ≡
     <a href="<?php $project_path ?>index.php?ticket=create">+ Add ticket</a> ≡
@@ -12,7 +7,6 @@ include('views/headers/default.php');
 <?php messageFlash(); ?>
 
 <?php
-require('models/tickets.php');
 foreach (getTickets($bdd) as $tk) {
     echo '<hr><h2>#' . $tk['id'] . ' ' . $tk['title'] . ' 
           <a href="/' . $project_path . '/index.php?ticket=edit&id=' . $tk['id'] . '">✎</a>

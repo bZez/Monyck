@@ -1,7 +1,5 @@
 <?php
-
-require('models/transactions.php');
-$type = $_POST['type'];
+$type = sanitizeText($_POST['type']);
 
 //Fonction createTransactionTypes() exécute la requête !
 createTransactionTypes($bdd, $type);

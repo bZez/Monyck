@@ -1,11 +1,10 @@
 <?php
 
-require ('models/offers.php');
-$id=$_POST['id'];
-$am=$_POST["amount"];
+$id=sanitizeNumber($_POST['id']);
+$am=sanitizeNumber($_POST["amount"]);
 $ex=$_POST["execTime"];
-$in=$_POST["insurance"];
-$ids=$_POST["status"];
+$in=sanitizeNumber($_POST["insurance"]);
+$ids=sanitizeNumber($_POST["status"]);
 
 echo $id,$am,$ex,$in,$ids;
 

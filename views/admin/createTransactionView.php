@@ -1,8 +1,3 @@
-<?php
-include('models/transactions.php');
-include('views/headers/default.php');
-?>
-
 <?php messageFlash(); ?>
 
     <h3>Create new transaction</h3>
@@ -44,7 +39,3 @@ include('views/headers/default.php');
 
         <input class="btn btn-primary" type="submit" value="Envoyer !">
     </form>
-
-<?php
-include('views/footers/default.php');
-?>

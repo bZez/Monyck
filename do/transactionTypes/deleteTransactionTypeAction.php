@@ -1,8 +1,6 @@
 <?php
-
-require ('models/transactions.php');
-$id=$_GET['id'];
-$tt=$_POST['type'];
+$id=sanitizeNumber($_GET['id']);
+$tt=sanitizeText($_POST['type']);
 
 deleteTransactionTypes($bdd,$id);
 

@@ -1,6 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/tickets.php');
 
 if (isset($_GET['id'])) {
     $skill = $_GET['id'];
@@ -21,5 +19,4 @@ if (isset($skill)) {
     </form>
     <?php
 }
-include('views/footers/default.php');
 ?>

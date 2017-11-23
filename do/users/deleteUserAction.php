@@ -1,7 +1,5 @@
 <?php
-
-require ('models/users.php');
-$id=$_GET['id'];
+$id=sanitizeNumber($_GET['id']);
 deleteUser($bdd,$id);
 
 $_SESSION['flash'] = '<h1>User '.$_POST['login'].' supprimé avec succès !</h1>';

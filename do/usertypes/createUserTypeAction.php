@@ -1,7 +1,5 @@
 <?php
-
-require ('models/users.php');
-$t=$_POST['type'];
+$t=sanitizeText($_POST['type']);
 
 //Fonction createUser() exécute la requête !
 createUserType($bdd,$t);

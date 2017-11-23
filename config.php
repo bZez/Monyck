@@ -7,6 +7,7 @@ if (!$bdd) {
     exit;
 }
 
+ini_set('display_errors', 1);
 $project_title = 'BANK OF MONYCKS';
 //N'oubliez pas de modifier le nom du dossier du projet.
 //Si vous êtes à la racine laissez vide

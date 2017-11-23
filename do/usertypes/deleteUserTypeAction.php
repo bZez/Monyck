@@ -1,7 +1,5 @@
 <?php
-
-require ('models/users.php');
-$id=$_GET['id'];
+$id=sanitizeNumber($_GET['id']);
 deleteUserType($bdd,$id);
 
 $_SESSION['flash'] = '<h1>Usertype deleted !</h1>';

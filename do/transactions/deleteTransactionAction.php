@@ -1,7 +1,5 @@
 <?php
-
-require ('models/transactions.php');
-$id=$_GET['id'];
+$id=sanitizeNumber($_GET['id']);
 
 deleteTransaction($bdd,$id);
 

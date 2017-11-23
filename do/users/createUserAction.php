@@ -1,11 +1,9 @@
 <?php
-
-require('models/users.php');
-$l = $_POST["login"];
-$fn = $_POST["fname"];
-$ln = $_POST["lname"];
+$l = sanitizeText($_POST["login"]);
+$fn = sanitizeText($_POST["fname"]);
+$ln = sanitizeText($_POST["lname"]);
 $bd = $_POST["bdate"];
-$m = $_POST["mail"];
+$m = sanitizeText($_POST["mail"]);
 $pw = $_POST["pw"];
 $tid= '';
 if (isset($_POST['type']) && $_POST['type'] != null) {

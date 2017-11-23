@@ -1,8 +1,6 @@
 <?php
-
-require ('models/users.php');
-$id=$_POST['id'];
-$t=$_POST['type'];
+$id=sanitizeNumber($_POST['id']);
+$t=sanitizeText($_POST['type']);
 
 //Fonction createUser() exécute la requête !
 editUserType($bdd,$id,$t);

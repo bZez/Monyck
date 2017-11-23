@@ -1,12 +1,10 @@
 <?php
-
-require ('models/users.php');
-$id=$_POST['id'];
-$l=$_POST["login"];
-$fn=$_POST["fname"];
-$ln=$_POST["lname"];
+$id=sanitizeNumber($_POST['id']);
+$l=sanitizeText($_POST["login"]);
+$fn=sanitizeText($_POST["fname"]);
+$ln=sanitizeText($_POST["lname"]);
 $bd=$_POST["bdate"];
-$m=$_POST["mail"];
+$m=sanitizeText($_POST["mail"]);
 $pw=$_POST["pw"];
 
 //Fonction createUser() exécute la requête !

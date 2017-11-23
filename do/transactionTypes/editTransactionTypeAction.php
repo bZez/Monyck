@@ -1,8 +1,6 @@
 <?php
-
-require ('models/transactions.php');
-$id=$_POST['id'];
-$tt=$_POST['type'];
+$id=sanitizeNumber($_POST['id']);
+$tt=sanitizeText($_POST['type']);
 
 //Fonction createTransactionType() exécute la requête !
 editTransactionTypes($bdd,$id,$tt);

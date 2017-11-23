@@ -1,7 +1,5 @@
 <?php
 
-include('views/headers/default.php');
-
 if (isset($_GET['id'])) {
     $ticket = $_GET['id'];
 } else {
@@ -18,7 +16,6 @@ if (isset($_GET['id'])) {
 <?php messageFlash(); ?>
 
 <?php
-require('models/tickets.php');
 foreach (getOneTicket($bdd, $ticket) as $tk) {
 echo '<hr><h2>#' . $tk['id'] . ' ' . $tk['title'] . ' 
           <a href="/' . $project_path . '/index.php?ticket=edit&id=' . $tk['id'] . '">✎</a>

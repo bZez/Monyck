@@ -1,7 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/users.php');
-
 if (isset($_GET['id'])) {
     $type = $_GET['id'];
 } else {
@@ -21,5 +18,4 @@ if (isset($type)) {
     </form>
     <?php
 }
-include('views/footers/default.php');
 ?>

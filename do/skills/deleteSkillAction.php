@@ -1,8 +1,7 @@
 <?php
 
-require ('models/tickets.php');
-$id=$_GET['id'];
-$sk=$_POST['skill'];
+$id=sanitizeNumber($_GET['id']);
+$sk=sanitizeText($_POST['skill']);
 
 deleteSkill($bdd,$id);
 

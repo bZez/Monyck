@@ -26,5 +26,4 @@ if (isset($_GET['user']) && $_GET['user'] != null) {
 } else {
     include('views/indexView.php');
 }
-
-
+include('views/footers/default.php');

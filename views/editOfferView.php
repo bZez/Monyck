@@ -1,6 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/offers.php');
 
 if (isset($_GET['id']) && $_GET['id'] != null) {
     $offer = $_GET['id'];
@@ -45,5 +43,4 @@ if (isset($offer)) {
     </form>
     <?php
 }
-include('views/footers/default.php');
 ?>

@@ -1,8 +1,3 @@
-z<?php
-include('models/tickets.php');
-include('views/headers/default.php');
-?>
-
 <form method="post" action="index.php?ticket=createAction">
 
     <p>
@@ -37,5 +32,3 @@ include('views/headers/default.php');
     <input type="submit" value="submit">
 
 </form>
-</body>
-</html>

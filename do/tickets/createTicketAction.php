@@ -6,14 +6,12 @@
  * Time: 13:28
  */
 
-require ('models/tickets.php');
-
-$tt=$_POST['title'];
-$ds=$_POST['description'];
+$tt=sanitizeText($_POST['title']);
+$ds=sanitizeText($_POST['description']);
 $cd=$_POST['creationdate'];
 $et=$_POST['exptime'];
-$idu=$_SESSION['id'];
-$ids=$_POST['id_skill'];
+$idu=sanitizeNumber($_SESSION['id']);
+$ids=sanitizeNumber($_POST['id_skill']);
 
 //Fonction createTicket() exécute la requête !
 createTicket($bdd,$tt,$ds,$cd,$et,$idu,$ids);

@@ -1,6 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/tickets.php');
 
 if (isset($_GET['id'])) {
     $ticket = $_GET['id'];
@@ -31,5 +29,4 @@ if (isset($ticket)) {
     </form>
     <?php
 }
-include('views/footers/default.php');
 ?>

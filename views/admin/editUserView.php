@@ -1,6 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/users.php');
 
 if (isset($_GET['id']) && $_GET['id'] != null) {
     $user = $_GET['id'];
@@ -31,5 +29,4 @@ if (isset($user)) {
     </form>
     <?php
 }
-include('views/footers/default.php');
 ?>

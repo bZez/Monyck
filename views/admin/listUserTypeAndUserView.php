@@ -1,13 +1,8 @@
-<?php
-include('views/headers/default.php');
-require('models/users.php');
-?>
+<h4>
+    ≡ <a href="<?php $project_path ?>index.php?type=list">List all userstypes</a>
+    <a href="<?php $project_path ?>index.php?type=create">+ Add new type</a>
 
-    <h4>
-        ≡ <a href="<?php $project_path ?>index.php?type=list">List all userstypes</a>
-        <a href="<?php $project_path ?>index.php?type=create">+ Add new type</a>
-
-    </h4>
+</h4>
 
 <?php messageFlash(); ?>
 
@@ -20,6 +15,3 @@ foreach (getUserByType($bdd) as $t) {
 }
 ?>
     <br>
-<?php
-include('views/footers/default.php');
-?>

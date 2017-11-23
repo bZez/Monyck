@@ -6,14 +6,16 @@
 //User list with usertypes and everything
 function getUsers($bdd)
 {
-    $result = $bdd->query("SELECT u.*,utu.*,ut.id AS utid, ut.type, GROUP_CONCAT(ut.type SEPARATOR ' <br> ') multitype 
-    FROM users u, user_types_users utu, user_types ut 
-    WHERE u.id=utu.id_user 
-    AND ut.id=utu.id_user_type 
-    GROUP BY u.id");
+    $result = $bdd->query("SELECT * FROM users");
     return $result;
 }
 
+function getTypeByUsers($bdd,$id)
+{
+    $result = $bdd->query("SELECT ut.type FROM user_types ut, user_types_users utu
+    WHERE ut.id=utu.id_user_type AND utu.id_user = $id ");
+    return $result;
+}
 
 //Usertype only
 function getUserType($bdd)
@@ -24,31 +26,22 @@ function getUserType($bdd)
 
 
 //User & type
-function getUserByType($bdd)
+function getUserByType($bdd,$id)
 {
-    $result = $bdd->query("SELECT ut.*,u.id,u.login,utu.*, 
-    GROUP_CONCAT(u.login SEPARATOR ' <br> ') userbytype
-    FROM users u, user_types_users utu, user_types ut 
-    WHERE u.id=utu.id_user 
-    AND ut.id=utu.id_user_type 
-    GROUP BY ut.id");
-    if (mysqli_num_rows($result) == 0) {
-        getUserType($bdd);
-    } else {
-        return $result;
-    }
+    $result = $bdd->query("SELECT u.login FROM users u, user_types_users utu
+    WHERE u.id=utu.id_user AND utu.id_user_type = $id ");
+    return $result;
 }
 
 
 //One user with type(s)
 function getOneUser($bdd, $id)
 {
-    $result = $bdd->query("SELECT u.*,utu.*,ut.id AS utid, ut.type, GROUP_CONCAT(ut.type SEPARATOR ' <br> ') multitype 
+    $result = $bdd->query("SELECT u.*,ut.id AS utid, ut.type 
     FROM users u, user_types_users utu, user_types ut 
     WHERE u.id=utu.id_user 
     AND ut.id=utu.id_user_type
-    AND u.id=$id 
-    GROUP BY u.id");
+    AND u.id=$id");
     return $result;
 }
 
@@ -125,5 +118,12 @@ function deleteUser($bdd, $id)
 
 function deleteUserType($bdd, $id)
 {
-    $bdd->query("DELETE ut.*,utu.* FROM user_types ut, user_types_users utu WHERE ut.id=$id AND utu.id_user_type=ut.id");
+    if(getUserByType($bdd,$id)->num_rows > 0) {
+        $bdd->query("DELETE ut.*,utu.* FROM user_types ut, user_types_users utu
+        WHERE ut.id=$id AND utu.id_user_type=ut.id");
+    }
+    else{
+        $bdd->query("DELETE FROM user_types
+        WHERE id=$id");
+    }
 }

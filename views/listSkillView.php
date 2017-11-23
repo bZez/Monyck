@@ -1,6 +1,3 @@
-<?php
-include('views/headers/default.php');
-?>
 
 <h4><?php if(checkPermission('Bankist(s),Insurer(s)')) {?>
     <a href="<?php $project_path ?>index.php?skill=create">+ Add skill</a>

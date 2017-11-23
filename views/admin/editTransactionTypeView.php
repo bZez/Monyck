@@ -1,6 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/transactions.php');
 
 if (isset($_GET['id'])) {
     $idtransactiontype = $_GET['id'];
@@ -20,5 +18,4 @@ if (isset($idtransactiontype)) {
     </form>
     <?php
 }
-include('views/footers/default.php');
 ?>

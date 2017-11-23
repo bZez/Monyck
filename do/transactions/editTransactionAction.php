@@ -1,13 +1,11 @@
 <?php
-
-require ('models/transactions.php');
-$id=$_POST['id'];
-$amount = $_POST['amount'];
+$id=sanitizeNumber($_POST['id']);
+$amount = sanitizeNumber($_POST['amount']);
 $transferDate = $_POST['transferDate'];
-$transactionType = $_POST['transactionType'];
-$comment = $_POST['comment'];
-$id_sender = $_POST['id_sender'];
-$id_receiver = $_POST['id_receveur'];
+$transactionType = sanitizeNumber($_POST['transactionType']);
+$comment =sanitizeText($_POST['comment']);
+$id_sender = sanitizeNumber($_POST['id_sender']);
+$id_receiver = sanitizeNumber($_POST['id_receveur']);
 
 
 //Fonction editTransaction() exécute la requête !
