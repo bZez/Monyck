@@ -4,36 +4,50 @@
 switch ($_GET['user']) {
 
     case "create":
-        checkPermission('Bankist(s),Insurer(s)');
+        include('models/users.php');
+        include('views/headers/default.php');
         include('views/admin/createUserView.php');
         break;
 
     case "edit":
-        checkPermission('Bankist(s),Insurer(s)');
+        include('views/headers/default.php');
+        require('models/users.php');
         include('views/admin/editUserView.php');
         break;
 
     case "list":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        include('views/headers/default.php');
+        require('models/users.php');
         include('views/listUserView.php');
         break;
+
+    case "logout":
+        session_destroy();
+        header('Location:index.php');
+        break;
+
+    case "login":
+        include('views/loginUserView.php');
+        break;
+
     //Actions
     case "loginUserAction":
+        include('models/login.php');
         include('do/users/loginUserAction.php');
         break;
 
     case "createAction":
-        checkPermission('Bankist(s),Insurer(s)');
+        require('models/users.php');
         include('do/users/createUserAction.php');
         break;
 
     case "editAction":
-        checkPermission('Bankist(s),Insurer(s)');
+        require('models/users.php');
         include('do/users/editUserAction.php');
         break;
 
     case "deleteAction":
-        checkPermission('Bankist(s),Insurer(s)');
+        require('models/users.php');
         include('do/users/deleteUserAction.php');
         break;
 

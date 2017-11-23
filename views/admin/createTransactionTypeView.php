@@ -1,8 +1,3 @@
-<?php
-include('models/transactions.php');
-include('views/headers/loginUserView.php');
-?>
-
 <?php messageFlash(); ?>
 
     <h3>Create new transaction type</h3>
@@ -10,7 +5,3 @@ include('views/headers/loginUserView.php');
         <input name="type" type="text" placeholder="Name your transaction type...">
         <input type="submit" name="submit" value="submit">
     </form>
-
-<?php
-include('views/footers/default.php');
-?>

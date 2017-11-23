@@ -18,13 +18,7 @@ if (isset($_GET['user']) && $_GET['user'] != null) {
     include('controllers/transactionController.php');
 } else if (isset($_GET['transType']) && $_GET['transType'] != null) {
     include('controllers/transactionTypeController.php');
-} else if (isset($_GET['logout'])) {
-    session_destroy();
-    header('Location:index.php');
-} else if (isset($_GET['login'])) {
-    include('views/loginUserView.php');
-} else {
+}  else {
     include('views/indexView.php');
 }
-
-
+include('views/footers/default.php');

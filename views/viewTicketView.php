@@ -1,7 +1,5 @@
 <?php
 
-include('views/headers/default.php');
-
 if (isset($_GET['id'])) {
     $ticket = $_GET['id'];
 } else {
@@ -18,11 +16,10 @@ if (isset($_GET['id'])) {
 <?php messageFlash(); ?>
 
 <?php
-require('models/tickets.php');
 foreach (getOneTicket($bdd, $ticket) as $tk) {
 echo '<hr><h2>#' . $tk['id'] . ' ' . $tk['title'] . ' 
-          <a href="/' . $project_path . '/index.php?ticket=edit&id=' . $tk['id'] . '">✎</a>
-          <a href="/' . $project_path . '/index.php?ticket=deleteAction&id=' . $tk['id'] . '">×</a></h2><br>
+          <a href="' . $project_path . 'index.php?ticket=edit&id=' . $tk['id'] . '">✎</a>
+          <a href="' . $project_path . 'index.php?ticket=deleteAction&id=' . $tk['id'] . '">×</a></h2><br>
           ' . $tk['description'] . '<br><br>
           <strong>Creation date:</strong><br>' . $tk['creationDate'] .'<br>
           <strong>Expiration time:</strong><br>' . $tk['expTime'] .'<br><br>

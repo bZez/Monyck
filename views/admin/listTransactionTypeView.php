@@ -14,8 +14,8 @@ include('views/headers/default.php');
 <?php
 require ('models/transactions.php');
 foreach (getTransactionTypes($bdd) as $tt) {
-    echo '<h2>#'.$tt['id'].' '.$tt['type'].' <a href="/'.$project_path.'/index.php?transType=edit&id='.$tt['id'].'">✎</a>
-          <a href="/'.$project_path.'/index.php?transType=deleteAction&id='.$tt['id'].'">×</a></h2><br>
+    echo '<h2>#'.$tt['id'].' '.$tt['type'].' <a href="'.$project_path.'index.php?transType=edit&id='.$tt['id'].'">✎</a>
+          <a href="'.$project_path.'index.php?transType=deleteAction&id='.$tt['id'].'">×</a></h2><br>
           '.$tt['type'].'';
 }
 

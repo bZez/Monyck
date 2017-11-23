@@ -1,6 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/transactions.php');
 
 if (isset($_GET['id'])) {
     $idtransactiontype = $_GET['id'];
@@ -16,9 +14,8 @@ if (isset($idtransactiontype)) {
     }
     ?>
     <input type="submit" value="Save" name="save" formaction="index.php?transType=editAction"">
-    <input type="submit" value="Delete" name="delete" formaction="/<?php echo $project_path.'/index.php?transType=deleteAction&id='.$tt['id'] ?>">
+    <input type="submit" value="Delete" name="delete" formaction="<?php echo $project_path.'index.php?transType=deleteAction&id='.$tt['id'] ?>">
     </form>
     <?php
 }
-include('views/footers/default.php');
 ?>

@@ -1,7 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/users.php');
-
 if (isset($_GET['id'])) {
     $type = $_GET['id'];
 } else {
@@ -17,9 +14,8 @@ if (isset($type)) {
     ?>
     <input type="submit" value="Save" name="save" formaction="index.php?type=editAction"">
     <input type="submit" value="x Delete" name="delete"
-           formaction="/<?php echo $project_path . '/index.php?type=deleteAction&id=' . $ty['id'] ?>">
+           formaction="<?php echo $project_path . 'index.php?type=deleteAction&id=' . $ty['id'] ?>">
     </form>
     <?php
 }
-include('views/footers/default.php');
 ?>

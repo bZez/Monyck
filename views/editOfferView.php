@@ -1,6 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/offers.php');
 
 if (isset($_GET['id']) && $_GET['id'] != null) {
     $offer = $_GET['id'];
@@ -39,11 +37,10 @@ if (isset($offer)) {
         <?php
     }
     ?>
-    <input type="submit" value="Save" name="save" formaction="/<?php echo $project_path ?>/index.php?offer=editAction">
+    <input type="submit" value="Save" name="save" formaction="<?php echo $project_path ?>index.php?offer=editAction">
     <input type="submit" value="x Delete" name="delete"
-           formaction="/<?php echo $project_path . '/index.php?offer=deleteAction&id=' . $offer ?>">
+           formaction="<?php echo $project_path . 'index.php?offer=deleteAction&id=' . $offer ?>">
     </form>
     <?php
 }
-include('views/footers/default.php');
 ?>

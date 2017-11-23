@@ -7,9 +7,12 @@ if (!$bdd) {
     exit;
 }
 
+ini_set('display_errors', 1);
 $project_title = 'BANK OF MONYCKS';
-//N'oubliez pas de modifier le nom du dossier du projet.
-//Si vous êtes à la racine laissez vide
-$project_path = 'Monycks';
+//N'oubliez pas de modifier le nom du dossier du projet type /DOSSIER/
+//Si vous êtes à la racine laissez vide (Hein mika !)
+$project_path = '/Monycks/';
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}

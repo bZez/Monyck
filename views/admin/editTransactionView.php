@@ -1,6 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/transactions.php');
 
 if (isset($_GET['id'])) {
     $transac = $_GET['id'];
@@ -52,14 +50,12 @@ if (isset($transac)) {
             </select><br><br>
 
             <input type="submit" value="Save" name="save"
-                   formaction="/<?php echo $project_path ?>/index.php?transaction=editAction">
+                   formaction="<?php echo $project_path ?>index.php?transaction=editAction">
             <input type="submit" value="Delete" name="delete"
-                   formaction="/<?php echo $project_path . '/index.php?transaction=list&id=' . $tt['id'] ?>">
-        </form>
+                   formaction="<?php echo $project_path . 'index.php?transaction=list&id=' . $tt['id'] ?>">
         </form>
 
         <?php
     }
 }
-include('views/footers/default.php');
 ?>

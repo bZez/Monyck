@@ -2,43 +2,56 @@
 
 switch ($_GET['offer']) {
     case "create":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        include('views/headers/default.php');
+        include('models/offers.php');
+        include('models/users.php');
         include('views/createOfferView.php');
         break;
 
     case "edit":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        include('views/headers/default.php');
+        require('models/offers.php');
         include('views/editOfferView.php');
         break;
 
     case "view":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
         include('views/viewOfferView.php');
         break;
 
     case "list":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        include('views/headers/default.php');
         include('views/listOfferView.php');
         break;
 
+    case "report":
+        include('views/headers/default.php');
+        include('views/createReportView.php');
+        break;
+
     case "reported":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        include('views/headers/default.php');
         include('views/listReportedOfferView.php');
         break;
 
     //Actions
     case "createAction":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        require('models/offers.php');
         include('do/offers/createOfferAction.php');
         break;
 
+    case "createReportAction":
+        require('models/offers.php');
+        include('do/offers/createReportAction.php');
+        break;
+
+
     case "editAction":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        require ('models/offers.php');
         include('do/offers/editOfferAction.php');
         break;
 
     case "deleteAction":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        require ('models/offers.php');
         include('do/offers/deleteOfferAction.php');
         break;
 

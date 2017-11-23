@@ -17,11 +17,11 @@
         <a href="<?php $project_path ?>index.php?user=list">Users</a> ≡
         <a href="<?php $project_path ?>index.php?transaction=list">Transactions</a> ≡
         <?php
-        if (isset($_SESSION['id'])) { ?>
-        <a href="<?php $project_path ?>index.php?logout">Logout</a> ≡
+        if (isset($_SESSION['email'])) { ?>
+        <a href="<?php $project_path ?>index.php?user=logout">Logout</a> ≡
         <?php } else {
            ?>
-        <a href="<?php $project_path ?>index.php?login">Login</a> ≡
+        <a href="<?php $project_path ?>index.php?user=login">Login</a> ≡
         <?php
         } ?>
     </h3>

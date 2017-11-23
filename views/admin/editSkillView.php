@@ -1,6 +1,4 @@
 <?php
-include('views/headers/default.php');
-require('models/tickets.php');
 
 if (isset($_GET['id'])) {
     $skill = $_GET['id'];
@@ -17,9 +15,8 @@ if (isset($skill)) {
     ?>
     <input type="submit" value="Save" name="save" formaction="index.php?skill=editAction"">
     <input type="submit" value="Delete" name="delete"
-           formaction="/<?php echo $project_path . '/index.php?skill=deleteAction&id=' . $sk['id'] ?>">
+           formaction="<?php echo $project_path . 'index.php?skill=deleteAction&id=' . $sk['id'] ?>">
     </form>
     <?php
 }
-include('views/footers/default.php');
 ?>

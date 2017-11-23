@@ -2,42 +2,45 @@
 
 switch ($_GET['ticket']) {
     case "create":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
-            include('views/createTicketView.php');
+        include('models/tickets.php');
+        include('views/headers/default.php');
+        include('views/createTicketView.php');
         break;
 
     case "edit":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
-            include('views/editTicketView.php');
+        include('views/headers/default.php');
+        require('models/tickets.php');
+        include('views/editTicketView.php');
         break;
 
     case "list":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        include('views/headers/default.php');
+        require('models/tickets.php');
         include ('views/listTicketView.php');
         break;
 
     case "view":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        include('views/headers/default.php');
+        require('models/tickets.php');
         include ('views/viewTicketView.php');
         break;
 
     //Actions
     case "createAction":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        require ('models/tickets.php');
         include ('do/tickets/createTicketAction.php');
         break;
 
     case "editAction":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        require ('models/tickets.php');
         include ('do/tickets/editTicketAction.php');
         break;
 
     case "deleteAction":
-        checkPermission('Customer(s),Bankist(s),Insurer(s)');
+        require ('models/tickets.php');
         include ('do/tickets/deleteTicketAction.php');
         break;
 
     default:
         echo "<p style='font-size:99vh'>_404</p>";
 }
-

@@ -43,9 +43,9 @@ function getTransactionTypeList($bdd)
 
 
 //SETTERS
-function createTransaction($bdd, $amount, $transferDate, $transactionType, $comment, $id_sender, $id_receveur)
+function createTransaction($bdd, $amount, $transactionType, $comment, $id_sender, $id_receveur)
 {
-    $bdd->query("INSERT INTO transactions(`amount`, `transferDate`, `comment`, `id_receiver`, `id_sender`, `id_transaction_type`) VALUES ($amount,'" . $tranferDate . "', '$comment', $id_sender, $id_receveur, $transactionType)");
+    $bdd->query("INSERT INTO transactions(`amount`, `comment`, `id_receiver`, `id_sender`, `id_transaction_type`) VALUES ($amount,'".$comment."', $id_sender, $id_receveur, $transactionType)");
 }
 
 ;

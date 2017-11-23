@@ -1,10 +1,10 @@
 <?php
 include('views/headers/default.php');
 
-if (isset($_SESSION['login'])) {
-echo 'Hello '.$_SESSION['login'];
+if (isset($_SESSION['email'])) {
+echo 'Hello '.$_SESSION['id'];
 }else {
-    echo "Hello... you must <a href=/$project_path/index.php?login><strong>login</strong></a>";
+    echo "Hello... you must <a href=".$project_path. "index.php?user=login><strong>login</strong></a>";
 }
 
 echo '<br>Les identifians ADMIN sont:<br> <b>admin@admin.com</b><br>123456';

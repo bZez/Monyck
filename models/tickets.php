@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: michael
- * Date: 16/11/17
- * Time: 13:29
- */
+
 
 //GETTERS
 
@@ -58,9 +53,9 @@ function editSkill ($bdd, $id, $sk) {
     $bdd->query("UPDATE skills SET language = '" . $sk . "' WHERE id=$id");
 };
 
-function createTicket($bdd, $tt,$ds,$cd,$et,$idu,$ids) {
-    $bdd->query("INSERT INTO tickets (title, description, creationDate, expTime, id_user_ticket, id_skill)
-VALUES ('".$tt."','".$ds."','".$cd."','".$et."',$idu,$ids);");
+function createTicket($bdd, $tt,$ds,$idu,$ids) {
+    $bdd->query("INSERT INTO tickets (title, description, id_user_ticket, id_skill)
+VALUES ('".$tt."','".$ds."',$idu,$ids);");
 };
 
 
@@ -70,6 +65,6 @@ function deleteTicket($bdd, $id) {
     $bdd->query("DELETE FROM tickets WHERE id = $id");
 };
 
-function editTicket($bdd,$id,$tl,$ds,$cd,$et,$iu,$is) {
-    $bdd->query("UPDATE tickets SET title = '$tl', description = '$ds',creationDate = '$cd', expTime = '$et', id_user_ticket = '$iu', id_skill = '$is' WHERE tickets.id='$id'");
+function editTicket($bdd,$id,$tl,$ds,$is) {
+    $bdd->query("UPDATE tickets SET title = '$tl', description = '$ds', id_skill = '$is' WHERE tickets.id='$id'");
 }
