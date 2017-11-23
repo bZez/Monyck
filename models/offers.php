@@ -75,7 +75,7 @@ function updateOfferStatus($bdd, $ids, $ido)
 
 function updateOffer($bdd, $id, $am, $ex, $in, $ids) {
     $bdd->query("UPDATE offers
-    SET amount=$am,execTime='".$ex."',insurance=$in,id_staus=$ids WHERE id=$id");
+    SET amount=$am,execTime='".$ex."',insurance=$in,id_status=$ids WHERE id=$id");
 }
 
 //---delete

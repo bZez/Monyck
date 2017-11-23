@@ -6,7 +6,7 @@ $ex=$_POST["execTime"];
 $in=sanitizeNumber($_POST["insurance"]);
 $ids=sanitizeNumber($_POST["status"]);
 
-echo $id,$am,$ex,$in,$ids;
+echo 'id:'.$id.' <br>Amount:'.$am.'<br>Exectime:'.$ex.'<br>Insurance:'.$in.'<br>Stauts:'.$ids;
 
 //Fonction createUser() exécute la requête !
 updateOffer($bdd, $id, $am, $ex, $in, $ids);

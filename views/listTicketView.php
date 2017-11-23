@@ -14,7 +14,7 @@ foreach (getTickets($bdd) as $tk) {
           ' . $tk['description'] . '<br><br>
           <strong>Creation date:</strong><br>' . $tk['creationDate'] .'<br>
           <strong>Expiration time:</strong><br>' . $tk['expTime'] .'<br><br>
-          <strong>Skills:</strong><br>' . $tk['language'] .'<br><br>
+          <strong>:</strong><br>' . $tk['language'] .'<br><br>
           <strong>Posted by:</strong><br>'.$tk['login'].'';
 }
 ?>

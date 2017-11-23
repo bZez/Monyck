@@ -22,7 +22,7 @@ if (isset($offer)) {
               <label>Amount:</label><br>
               <input name="amount" type="number" value=' . $of['amount'] . '><br>
               <label>Allowed time:</label><br>
-              <input name="execTime" type="time" value=' . $of['execTime']. '><br>
+              <input name="execTime" type="text" value=' . $of['execTime']. '><br>
               <label>Insurance:</label><br>
               <select class="form-control" name="insurance">
               <option value="0">NO</option>
