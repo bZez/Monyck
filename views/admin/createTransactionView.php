@@ -5,7 +5,7 @@
 
     <label>Amount:</label><br>
     <input class="form-control" type="number" name='amount' placeholder="Le montant de ta transaction..."
-           required="true"><br><br>
+           required="true" min="0" max=<?php echo userBalance($bdd,$_SESSION['id']) ?>><br><br>
     <select class="form-control" name='transactionType'>
         <?php
         foreach (getTransactionTypeList($bdd) as $ttl) {
@@ -19,19 +19,26 @@
            required="true"><br><br>
 
     <label>From</label><br>
-    <select class="form-control" name='id_sender'>
-        <?php
-        foreach (getAllUsers($bdd) as $aU) {
-            echo '<option value="' . $aU['id'] . '">' . $aU['firstname'] . ' ' . $aU['lastname'] . ' (' . $aU['login'] . ')</option>';
-        }
-        ?>
-    </select><br><br>
-
+    <?php if (isAdmin()) { ?>
+        <select class="form-control" name='id_sender'>
+            <?php
+            foreach (getAllUsers($bdd) as $aU) {
+                echo '<option value="' . $aU['id'] . '">' . $aU['firstname'] . ' ' . $aU['lastname'] . ' (' . $aU['login'] . ')</option>';
+            }
+            ?>
+        </select><br><br>
+    <?php } else {
+        echo '<input hidden name="id_sender" value="' . $_SESSION['id'] . '">' . $_SESSION['login'] . ' (You)<br><br>';
+    } ?>
     <label>To:</label><br>
-    <select class="form-control" name='id_receveur'>
+    <select class="form-control" name='id_receiver'>
         <?php
         foreach (getAllUsers($bdd) as $aU) {
-            echo '<option value="' . $aU['id'] . '">' . $aU['firstname'] . ' ' . $aU['lastname'] . ' (' . $aU['login'] . ')</option>';
+            if ($aU['id'] === $_SESSION['id']) {
+                echo '';
+            } else {
+                echo '<option value="' . $aU['id'] . '">' . $aU['firstname'] . ' ' . $aU['lastname'] . ' (' . $aU['login'] . ')</option>';
+            }
         }
         ?>
     </select><br><br>

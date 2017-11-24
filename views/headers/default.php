@@ -15,14 +15,18 @@
         <a href="<?php $project_path ?>index.php?ticket=list">Tickets</a> ≡
         <a href="<?php $project_path ?>index.php?offer=list">Offers</a> ≡
         <a href="<?php $project_path ?>index.php?user=list">Users</a> ≡
-        <a href="<?php $project_path ?>index.php?transaction=list">Transactions</a> ≡
-        <?php
+        <?php if (isAdmin()) { ?>
+            <a href="<?php $project_path ?>index.php?transaction=list">Transactions</a> ≡
+        <?php } else { ?>
+            <a href="<?php $project_path ?>index.php?transaction=create">Transactions</a> ≡
+            <?php
+        }
         if (isset($_SESSION['email'])) { ?>
-        <a href="<?php $project_path ?>index.php?user=logout">Logout</a> ≡
+            <a href="<?php $project_path ?>index.php?user=logout">Logout</a> ≡
         <?php } else {
-           ?>
-        <a href="<?php $project_path ?>index.php?user=login">Login</a> ≡
-        <?php
+            ?>
+            <a href="<?php $project_path ?>index.php?user=login">Login</a> ≡
+            <?php
         } ?>
     </h3>
 

@@ -2,8 +2,9 @@
 
 switch ($_GET['transaction']) {
     case "create":
-        checkPermissions('Banker');
+        checkPermissions('Customer');
         include('models/transactions.php');
+        include('models/users.php');
         include('views/headers/default.php');
         include('views/admin/createTransactionView.php');
         break;
@@ -26,7 +27,6 @@ switch ($_GET['transaction']) {
     //Actions
     case
     "createAction":
-
         require('models/transactions.php');
         include('do/transactions/createTransactionAction.php');
         break;

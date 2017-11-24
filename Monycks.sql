@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 24 nov. 2017 à 10:57
+-- Généré le :  ven. 24 nov. 2017 à 14:43
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.11
 
@@ -43,9 +43,8 @@ CREATE TABLE `offers` (
 --
 
 INSERT INTO `offers` (`id`, `amount`, `execTime`, `insurance`, `id_ticket`, `id_user_offer`, `id_status`) VALUES
-(3, 101, '00:20:17', 0, 1, 2, 2),
-(6, 666, '00:00:00', 0, 3, 2, 1),
-(7, 666, '00:00:00', 1, 1, 7, 1);
+(7, 500, '00:00:00', 0, 1, 1, 1),
+(8, 100, '00:15:00', 0, 2, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -66,7 +65,7 @@ CREATE TABLE `reports` (
 --
 
 INSERT INTO `reports` (`id`, `explanation`, `relation`, `comitment`, `id_offer`) VALUES
-(1, 5, 5, 5, 3);
+(1, 0, 0, 0, 8);
 
 -- --------------------------------------------------------
 
@@ -132,8 +131,8 @@ CREATE TABLE `tickets` (
 --
 
 INSERT INTO `tickets` (`id`, `title`, `description`, `creationDate`, `expTime`, `id_user_ticket`, `id_skill`) VALUES
-(1, 'ticket', 'ceci est la description du ticket de test...', '2017-11-21', '00:20:17', 2, 2),
-(3, 'Ticket CLIENT', 'sdtgsefghsrdfhgs', '0000-00-00', '00:00:00', 7, 1);
+(1, 'TEST TICKET N°1', 'This is a short but efficient description !', '0000-00-00', '00:00:00', 1, 5),
+(2, 'TEST TICKET N°2', 'Another one...', '0000-00-00', '00:00:00', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -156,7 +155,7 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`id`, `amount`, `transferDate`, `comment`, `id_receiver`, `id_sender`, `id_transaction_type`) VALUES
-(3, 666, '2017-11-24 11:40:05', 'you earn that because i love you', 2, 7, 2);
+(1, 1000, '2017-11-24 15:43:06', 'nice job !', 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -199,8 +198,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `login`, `password`, `birthday`) VALUES
-(2, 'admin', 'supreme', 'admin@admin.com', 'administrator', '123456', '0000-00-00'),
-(7, 'john', 'doe', 'john@doe.com', 'client', '123456', '2017-11-24');
+(1, 'Admin', 'SUPRÊME', 'admin@admin.com', 'ADMIN', '123456', '0000-00-00'),
+(2, 'Sam', 'BZEZ', 'indabzez@icloud.com', 'bZez', '123456', '1990-08-01');
 
 -- --------------------------------------------------------
 
@@ -238,14 +237,10 @@ CREATE TABLE `user_types_users` (
 --
 
 INSERT INTO `user_types_users` (`id_user`, `id_user_type`) VALUES
-(2, 1),
-(2, 2),
-(2, 3),
-(2, 7),
-(6, 1),
-(6, 2),
-(6, 7),
-(7, 1);
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 1);
 
 --
 -- Index pour les tables déchargées
@@ -330,7 +325,7 @@ ALTER TABLE `user_types_users`
 -- AUTO_INCREMENT pour la table `offers`
 --
 ALTER TABLE `offers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `reports`
@@ -354,13 +349,13 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT pour la table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `transaction_types`
@@ -372,7 +367,7 @@ ALTER TABLE `transaction_types`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `user_types`

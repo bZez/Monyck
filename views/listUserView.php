@@ -15,8 +15,8 @@ foreach (getUsers($bdd) as $rs) {
 <a href="' . $project_path . 'index.php?user=deleteAction&id=' . $rs['id'] . '">×</a></h2>';
         }
     }
-
-    echo ' <h3>' . $rs['birthday'] . '</h3>';
+ echo ' <h3>'.userBalance($bdd,$rs['id']).' Ⓜ<br><br>';
+    echo 'Birthdate:<br>'.$rs['birthday'] . '</h3>';
     foreach (getTypeByUsers($bdd, $rs['id']) as $rs2) {
         echo '<h3>' . $rs2['type'] . '</h3>';
     }

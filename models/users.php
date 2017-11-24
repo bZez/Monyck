@@ -125,3 +125,26 @@ function deleteUserType($bdd, $id)
         WHERE id=$id");
     }
 }
+
+//BANK ACCOUNT
+
+function getCredit($bdd,$id) {
+    $result = $bdd->query("SELECT SUM(t.amount) AS cred, u.id FROM transactions t, users u WHERE t.id_receiver=u.id AND u.id=$id ");
+    $line=$result->fetch_assoc();
+    return $line['cred'];
+}
+function getDebit($bdd,$id) {
+    $result = $bdd->query("SELECT SUM(t.amount) AS deb, u.id FROM transactions t, users u WHERE t.id_sender=u.id AND u.id=$id ");
+    $line=$result->fetch_assoc();
+    return $line['deb'];
+}
+
+function userBalance($bdd,$id){
+    $starter=10000; //Monycks for users
+    $balance = $starter +  getCredit($bdd,$id) -  getDebit($bdd,$id);
+    if($balance < 0) {
+        return $balance.' You must contact your banker !';
+    } else {
+        return $balance;
+    }
+}
