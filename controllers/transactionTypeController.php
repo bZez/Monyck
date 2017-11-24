@@ -2,18 +2,21 @@
 
 switch ($_GET['transType']) {
     case "create":
+        checkPermissions('Banker');
         include('models/transactions.php');
         include('views/headers/loginUserView.php');
         include('views/admin/createTransactionTypeView.php');
         break;
 
     case "edit":
+        checkPermissions('Banker');
         include('views/headers/default.php');
         require('models/transactions.php');
         include('views/admin/editTransactionTypeView.php');
         break;
 
     case "list":
+        checkPermissions('Banker');
         include('views/admin/listTransactionTypeView.php');
         break;
 

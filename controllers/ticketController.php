@@ -2,12 +2,14 @@
 
 switch ($_GET['ticket']) {
     case "create":
+        checkPermissions('Customer');
         include('models/tickets.php');
         include('views/headers/default.php');
         include('views/createTicketView.php');
         break;
 
     case "edit":
+        checkPermissions('Customer');
         include('views/headers/default.php');
         require('models/tickets.php');
         include('views/editTicketView.php');

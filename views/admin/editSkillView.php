@@ -13,6 +13,7 @@ if (isset($skill)) {
               <h2>#' . $sk['id'] . '<input name="skill" type="text" value=' . $sk['language'] . '><br></h2>';
     }
     ?>
+    <input type="button" value="Back" onclick="window.history.back();">
     <input type="submit" value="Save" name="save" formaction="index.php?skill=editAction"">
     <input type="submit" value="Delete" name="delete"
            formaction="<?php echo $project_path . 'index.php?skill=deleteAction&id=' . $sk['id'] ?>">

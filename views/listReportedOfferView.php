@@ -18,6 +18,6 @@ foreach (getTicketsOffersReports($bdd) as $of) {
               Explanation: ' . $of['explanation'] . '/5 <br>
               Relation: ' . $of['relation'] . '/5 <br>
               Comitment: ' . $of['comitment'] . '/5<br><br>
-              <a href="' . $project_path . 'index.php?ticket=view&id=' . $of['id_ticket'] . '">View ticket</a></h4>';
+             <input value="View Ticket" type="button"  onclick=location.href="' . $project_path . 'index.php?ticket=view&id=' . $of['id_ticket'] . '"></h4>';
 }
 ?>

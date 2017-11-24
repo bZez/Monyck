@@ -1,6 +1,6 @@
 <?php
 
-$bdd = mysqli_connect("localhost", "root", "rooted", "monyckDB");
+$bdd = mysqli_connect("localhost", "root", "rooted", "Monycks");
 
 if (!$bdd) {
     echo "Erreur de connexion MySQL" . PHP_EOL;

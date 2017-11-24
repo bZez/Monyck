@@ -12,6 +12,7 @@ if (isset($type)) {
               <h2>#' . $ty['id'] . '<input name="type" type="text" value=' . $ty['type'] . '><br></h2>';
     }
     ?>
+    <input type="button" value="Back" onclick="window.history.back();">
     <input type="submit" value="Save" name="save" formaction="index.php?type=editAction"">
     <input type="submit" value="x Delete" name="delete"
            formaction="<?php echo $project_path . 'index.php?type=deleteAction&id=' . $ty['id'] ?>">

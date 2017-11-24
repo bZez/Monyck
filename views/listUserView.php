@@ -8,13 +8,20 @@
 
 <?php
 foreach (getUsers($bdd) as $rs) {
-    echo '<hr><h2>#' . $rs['id'] . ' ' . $rs['login'] . ' <a href="' . $project_path . 'index.php?user=edit&id=' . $rs['id'] . '">✎</a>
-              <a href="' . $project_path . 'index.php?user=deleteAction&id=' . $rs['id'] . '">×</a></h2>
-              <h3>' . $rs['birthday'] . '</h3>';
-    foreach (getTypeByUsers($bdd,$rs['id']) as $rs2) {
+    echo '<hr><h2>#' . $rs['id'] . ' ' . $rs['login'];
+    if (isset($_SESSION['login'])) {
+        if ($rs['login'] == $_SESSION['login'] | isAdmin()) {
+            echo ' <a href="' . $project_path . 'index.php?user=edit&id=' . $rs['id'] . '">✎</a>
+<a href="' . $project_path . 'index.php?user=deleteAction&id=' . $rs['id'] . '">×</a></h2>';
+        }
+    }
+
+    echo ' <h3>' . $rs['birthday'] . '</h3>';
+    foreach (getTypeByUsers($bdd, $rs['id']) as $rs2) {
         echo '<h3>' . $rs2['type'] . '</h3>';
     }
-              echo '<h4>' . $rs['firstname'] . ' ' . $rs['lastname'] . '</h4>
+    echo '<h4>' . $rs['firstname'] . ' ' . $rs['lastname'] . '</h4>
               <h3>' . $rs['email'] . '</h3>';
 }
 ?>
+

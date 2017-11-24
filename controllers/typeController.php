@@ -2,18 +2,21 @@
 
 switch ($_GET['type']) {
     case "create":
+        checkPermissions('Banker');
         include('models/users.php');
         include('views/headers/login.php');
         include('views/admin/createUserTypeView.php');
         break;
 
     case "userlist":
+        checkPermissions('Banker');
         include('views/headers/default.php');
         require('models/users.php');
         include('views/admin/listUserTypeAndUserView.php');
         break;
 
     case "list":
+        checkPermissions('Banker');
         include('views/headers/default.php');
         require('models/users.php');
         include('views/admin/listUserTypeView.php');
@@ -21,6 +24,7 @@ switch ($_GET['type']) {
 
 
     case "edit":
+        checkPermissions('Banker');
         include('views/headers/default.php');
         require('models/users.php');
         include('views/admin/editUserTypeView.php');

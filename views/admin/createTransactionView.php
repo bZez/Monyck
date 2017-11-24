@@ -18,7 +18,7 @@
     <input class="form-control" type="text" name='comment' placeholder="Intitulé de la transaction..."
            required="true"><br><br>
 
-    <label>Emetteur:A remplacer par mon id sans pouvoir modifier</label><br>
+    <label>From</label><br>
     <select class="form-control" name='id_sender'>
         <?php
         foreach (getAllUsers($bdd) as $aU) {
@@ -27,7 +27,7 @@
         ?>
     </select><br><br>
 
-    <label>Destinataire:</label><br>
+    <label>To:</label><br>
     <select class="form-control" name='id_receveur'>
         <?php
         foreach (getAllUsers($bdd) as $aU) {
@@ -36,5 +36,5 @@
         ?>
     </select><br><br>
 
-    <input class="btn btn-primary" type="submit" value="Envoyer !">
+    <input class="btn btn-primary" type="submit" value="Send it !">
 </form>

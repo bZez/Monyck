@@ -2,6 +2,7 @@
 
 switch ($_GET['offer']) {
     case "create":
+        checkPermissions('Customer');
         include('views/headers/default.php');
         include('models/offers.php');
         include('models/users.php');
@@ -9,26 +10,31 @@ switch ($_GET['offer']) {
         break;
 
     case "edit":
+        checkPermissions('Customer');
         include('views/headers/default.php');
         require('models/offers.php');
         include('views/editOfferView.php');
         break;
 
     case "view":
+        checkPermissions('Customer');
         include('views/viewOfferView.php');
         break;
 
     case "list":
+        checkPermissions('Customer');
         include('views/headers/default.php');
         include('views/listOfferView.php');
         break;
 
     case "report":
+        checkPermissions('Customer');
         include('views/headers/default.php');
         include('views/createReportView.php');
         break;
 
     case "reported":
+        checkPermissions('Customer');
         include('views/headers/default.php');
         include('views/listReportedOfferView.php');
         break;

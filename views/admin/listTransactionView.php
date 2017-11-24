@@ -13,6 +13,7 @@ foreach (getTransaction($bdd) as $tt) {
               <strong>Date:</strong><br>
               ' . $tt['transferDate'] . '<br><br>
               <strong>Amount</strong><br> ' . $tt['amount'] . ' Ⓜ<br><br>
+              <strong>Comment</strong><br> ' . $tt['comment'] . ' <br><br>
               <strong>Transaction type:</strong><br>
               ' . $tt['type'] . '';
 }

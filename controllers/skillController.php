@@ -2,12 +2,14 @@
 
 switch ($_GET['skill']) {
     case "create":
+        checkPermissions('Banker');
         include('models/tickets.php');
         include('views/headers/loginUserView.php');
         include('views/admin/createSkillView.php');
         break;
 
     case "edit":
+        checkPermissions('Banker');
         include('views/headers/default.php');
         require('models/tickets.php');
         include('views/admin/editSkillView.php');

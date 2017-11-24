@@ -8,7 +8,12 @@
 <?php
 require('models/tickets.php');
 foreach (getSkills($bdd) as $sk) {
-    echo '<h2>#' . $sk['id'] . ' ' . $sk['language'] . ' <a href="' . $project_path . 'index.php?skill=edit&id=' . $sk['id'] . '">✎</a>
+    echo '<h2>#' . $sk['id'] . ' ' . $sk['language'];
+
+        if (isAdmin()) {
+    echo '<a href="' . $project_path . 'index.php?skill=edit&id=' . $sk['id'] . '">✎</a>
           <a href="' . $project_path . 'index.php?skill=deleteAction&id=' . $sk['id'] . '">×</a></h2>';
+        }
 }
 ?>
+

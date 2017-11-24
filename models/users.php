@@ -81,11 +81,12 @@ function addTypeToUser($bdd, $uid, $tid)
 }
 
 
-function editUser($bdd, $id, $l/*, $fn, $ln, $bd, $m, $pw*/)
+function editUser($bdd, $id, $l, $fn, $ln, $bd, $m, $pw,$tid)
 {
     $bdd->query("UPDATE users 
-    SET login = '" . $l . "'
+    SET login = '" . $l . "',firstname='".$fn."',lastname='".$ln."',birthday='".$bd."',email='".$m."',password='".$pw."'
     WHERE users.id=$id");
+    addTypeToUser($bdd, $id, $tid);
 }
 
 function editUserType($bdd, $id, $t)

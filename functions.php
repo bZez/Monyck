@@ -1,5 +1,4 @@
 <?php
-require('config.php');
 
 function messageFlash()
 {
@@ -28,17 +27,32 @@ function setLists($bdd, $tableName, $displayField, $withTitle = false, $selected
     }
 }
 
-/*function checkPermission($role)
-{
-    if (strpos($role, $_SESSION['role']) !== false) {
-    } else if (strpos($role, 'Guest(s) ') !== false) {
+function checkPermissions($role) {
+    if (isset($_SESSION['roles'])) {
+        $array = $_SESSION['roles'];
+        if (in_array($role, $array)) {
+            //That's OK
+        } else {
+            header('location:index.php?user=login');
+        }
     } else {
-        header('Location:' . $project_path . 'index.php?login');
+        header('location:index.php?user=login');
     }
-}*/
 
+}
 
-
+function isAdmin() {
+    if (isset($_SESSION['roles'])) {
+        $array = $_SESSION['roles'];
+        if (in_array('Banker', $array)) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
 
 
 function sanitizeText($text)

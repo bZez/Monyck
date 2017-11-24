@@ -13,6 +13,7 @@ if (isset($idtransactiontype)) {
               <h2>#' . $tt['id'] . '<input name="type" type="text" value=' . $tt['type'] . '><br></h2>';
     }
     ?>
+    <input type="button" value="Back" onclick="window.history.back();">
     <input type="submit" value="Save" name="save" formaction="index.php?transType=editAction"">
     <input type="submit" value="Delete" name="delete" formaction="<?php echo $project_path.'index.php?transType=deleteAction&id='.$tt['id'] ?>">
     </form>

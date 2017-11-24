@@ -4,17 +4,19 @@
 switch ($_GET['user']) {
 
     case "create":
+        checkPermissions('Banker');
         include('models/users.php');
         include('views/headers/default.php');
         include('views/admin/createUserView.php');
         break;
 
     case "edit":
-        include('views/headers/default.php');
-        require('models/users.php');
-        include('views/admin/editUserView.php');
+        if ($_SESSION['id'] === $_GET['id'] | isAdmin()) {
+            include('views/headers/default.php');
+            require('models/users.php');
+            include('views/admin/editUserView.php');
+        }
         break;
-
     case "list":
         include('views/headers/default.php');
         require('models/users.php');

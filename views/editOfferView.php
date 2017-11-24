@@ -37,6 +37,7 @@ if (isset($offer)) {
         <?php
     }
     ?>
+    <input type="button" value="Back" onclick="window.history.back();">
     <input type="submit" value="Save" name="save" formaction="<?php echo $project_path ?>index.php?offer=editAction">
     <input type="submit" value="x Delete" name="delete"
            formaction="<?php echo $project_path . 'index.php?offer=deleteAction&id=' . $offer ?>">

@@ -2,18 +2,21 @@
 
 switch ($_GET['transaction']) {
     case "create":
+        checkPermissions('Banker');
         include('models/transactions.php');
         include('views/headers/default.php');
         include('views/admin/createTransactionView.php');
         break;
 
     case "edit":
+        checkPermissions('Banker');
         include('views/headers/default.php');
         require('models/transactions.php');
         include('views/admin/editTransactionView.php');
         break;
 
     case "list":
+        checkPermissions('Banker');
         include('views/headers/default.php');
         require('models/transactions.php');
         include('views/admin/listTransactionView.php');
@@ -23,6 +26,7 @@ switch ($_GET['transaction']) {
     //Actions
     case
     "createAction":
+
         require('models/transactions.php');
         include('do/transactions/createTransactionAction.php');
         break;

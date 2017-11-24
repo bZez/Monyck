@@ -11,6 +11,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     }
     if ($check) {
         $_SESSION['id'] = getUserId($bdd,$emailClean);
+        $_SESSION['login'] = getUserLogin($bdd,$emailClean);
         $_SESSION['email']=$emailClean;
         $_SESSION['roles']=$roles;
         header('Location:' . $project_path . 'index.php');

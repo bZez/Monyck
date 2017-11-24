@@ -18,9 +18,11 @@ if (isset($ticket)) {
 
     }
     ?>
+    <input type="button" value="Back" onclick="window.history.back();">
     <input type="submit" value="Save" name="save" formaction="index.php?ticket=editAction">
     <input type="submit" value="Delete" name="delete"
            formaction="<?php echo $project_path . 'index.php?ticket=deleteAction&id=' . $rs['id'] ?>">
+
     </form>
     <?php
 }

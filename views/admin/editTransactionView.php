@@ -48,7 +48,7 @@ if (isset($transac)) {
                 }
                 ?>
             </select><br><br>
-
+        <input type="button" value="Back" onclick="window.history.back();">
             <input type="submit" value="Save" name="save"
                    formaction="<?php echo $project_path ?>index.php?transaction=editAction">
             <input type="submit" value="Delete" name="delete"
