@@ -18,7 +18,16 @@ switch ($_GET['offer']) {
 
     case "view":
         checkPermissions('Customer');
+        include('views/headers/default.php');
+        require('models/offers.php');
         include('views/viewOfferView.php');
+        break;
+
+    case "viewreport":
+        checkPermissions('Customer');
+        include('views/headers/default.php');
+        require('models/offers.php');
+        include('views/viewReportView.php');
         break;
 
     case "list":

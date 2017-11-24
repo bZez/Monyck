@@ -30,7 +30,11 @@ foreach (getTicketsOffers($bdd) as $of) {
     echo '</h4>
               <h6><input value="View Ticket" type="button"  onclick=location.href="' . $project_path . 'index.php?ticket=view&id=' . $of['id_ticket'] . '"></h6>';
     if ($of['status'] !== 'OPEN') {
-        echo '<h6><input type="button" value="Add report" onclick=location.href="' . $project_path . 'index.php?offer=report&id=' . $of['ido'] . '"></h6>';
+        if(isReported($bdd,$of['ido'])) {
+            echo '<h6><input type="button" value="View report" onclick=location.href="' . $project_path . 'index.php?offer=viewreport&id=' . $of['ido'] . '"></h6>';
+        } else {
+            echo '<h6><input type="button" value="Add report" onclick=location.href="' . $project_path . 'index.php?offer=report&id=' . $of['ido'] . '"></h6>';
+        }
     }
 
 
