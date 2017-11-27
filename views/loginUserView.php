@@ -1,9 +1,4 @@
-<?php
-include('views/headers/login.php');
-
-?>
-
-    <div class="loginblock">
+ <div class="loginblock">
         <div>
             <form method="POST" name="login" action="index.php?user=loginUserAction">
                 <label>Mail:</label><br>
@@ -16,7 +11,3 @@ include('views/headers/login.php');
             </form>
         </div>
     </div>
-<?php
-
-
-include('views/footers/default.php');

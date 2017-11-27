@@ -44,4 +44,5 @@ if (isset($offer)) {
     </form>
     <?php
 }
+
 ?>

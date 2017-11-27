@@ -6,11 +6,10 @@
 <?php messageFlash(); ?>
 
 <?php
-require('models/offers.php');
 
 foreach (getTicketsOffersReports($bdd) as $of) {
     echo '<hr><h4>#' . $of['id'] . ' ' . $of['title'] . '<br>
-              <small>taken by ' . $of['login'] . '</small><br><br>
+              <small>taken by ' .  getReportUser($bdd,$of['ido']) . '</small><br><br>
               ' . $of['status'] . '<br><br>
               Rewarded:<br>' . $of['amount'] . '<br>
               Allowed time<br>' . $of['execTime'] . '<br>

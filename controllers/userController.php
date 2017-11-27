@@ -1,25 +1,20 @@
 <?php
+require('models/users.php');
 
 
 switch ($_GET['user']) {
 
     case "create":
         checkPermissions('Banker');
-        include('models/users.php');
-        include('views/headers/default.php');
         include('views/admin/createUserView.php');
         break;
 
     case "edit":
         if ($_SESSION['id'] === $_GET['id'] | isAdmin()) {
-            include('views/headers/default.php');
-            require('models/users.php');
             include('views/admin/editUserView.php');
         }
         break;
     case "list":
-        include('views/headers/default.php');
-        require('models/users.php');
         include('views/listUserView.php');
         break;
 
@@ -39,17 +34,14 @@ switch ($_GET['user']) {
         break;
 
     case "createAction":
-        require('models/users.php');
         include('do/users/createUserAction.php');
         break;
 
     case "editAction":
-        require('models/users.php');
         include('do/users/editUserAction.php');
         break;
 
     case "deleteAction":
-        require('models/users.php');
         include('do/users/deleteUserAction.php');
         break;
 

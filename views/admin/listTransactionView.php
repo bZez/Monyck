@@ -17,4 +17,3 @@ foreach (getTransaction($bdd) as $tt) {
               <strong>Transaction type:</strong><br>
               ' . $tt['type'] . '';
 }
-?>

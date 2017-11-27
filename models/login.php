@@ -1,12 +1,13 @@
 <?php
+
 function checkLogin($bdd, $email, $password)
 {
     $result = $bdd->query("SELECT email,password 
     FROM users 
-    WHERE email='$email' 
-    AND password='$password'");
-    $result->fetch_assoc();
-    if ($result->num_rows > 0) {
+    WHERE email='$email'");
+    $line = $result->fetch_assoc();
+    $savedPass =$line['password'];
+    if (password_verify("$password", $savedPass)) {
         return true;
     } else {
         return false;

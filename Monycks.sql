@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 24 nov. 2017 à 14:43
--- Version du serveur :  10.1.28-MariaDB
--- Version de PHP :  7.1.11
+-- Généré le :  lun. 27 nov. 2017 à 07:33
+-- Version du serveur :  10.1.29-MariaDB
+-- Version de PHP :  7.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,14 +38,6 @@ CREATE TABLE `offers` (
   `id_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `offers`
---
-
-INSERT INTO `offers` (`id`, `amount`, `execTime`, `insurance`, `id_ticket`, `id_user_offer`, `id_status`) VALUES
-(7, 500, '00:00:00', 0, 1, 1, 1),
-(8, 100, '00:15:00', 0, 2, 1, 4);
-
 -- --------------------------------------------------------
 
 --
@@ -59,13 +51,6 @@ CREATE TABLE `reports` (
   `comitment` float NOT NULL,
   `id_offer` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `reports`
---
-
-INSERT INTO `reports` (`id`, `explanation`, `relation`, `comitment`, `id_offer`) VALUES
-(1, 0, 0, 0, 8);
 
 -- --------------------------------------------------------
 
@@ -126,14 +111,6 @@ CREATE TABLE `tickets` (
   `id_skill` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `tickets`
---
-
-INSERT INTO `tickets` (`id`, `title`, `description`, `creationDate`, `expTime`, `id_user_ticket`, `id_skill`) VALUES
-(1, 'TEST TICKET N°1', 'This is a short but efficient description !', '0000-00-00', '00:00:00', 1, 5),
-(2, 'TEST TICKET N°2', 'Another one...', '0000-00-00', '00:00:00', 1, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -149,13 +126,6 @@ CREATE TABLE `transactions` (
   `id_sender` int(11) NOT NULL,
   `id_transaction_type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `transactions`
---
-
-INSERT INTO `transactions` (`id`, `amount`, `transferDate`, `comment`, `id_receiver`, `id_sender`, `id_transaction_type`) VALUES
-(1, 1000, '2017-11-24 15:43:06', 'nice job !', 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -189,7 +159,7 @@ CREATE TABLE `users` (
   `lastname` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `login` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 NOT NULL,
   `birthday` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -198,8 +168,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `login`, `password`, `birthday`) VALUES
-(1, 'Admin', 'SUPRÊME', 'admin@admin.com', 'ADMIN', '123456', '0000-00-00'),
-(2, 'Sam', 'BZEZ', 'indabzez@icloud.com', 'bZez', '123456', '1990-08-01');
+(1, 'Admin', 'ISTRATOR', 'admin@admin.com', 'Admin', '$2y$10$2l.gCpbOOFyM4bC9H6rVU.0I0ORwnOmqp0EP/nxXLIvFdoIAyl.cW', '2017-11-25'),
+(2, 'User', 'FRIENDLY', 'user@user.com', 'User', '$2y$10$7WpJ.0uYWcEA6GRtnn4khu9DqV4UUqFj1aVyXzn6s2G3qmOTqRTMe', '2017-11-25');
 
 -- --------------------------------------------------------
 
@@ -325,13 +295,13 @@ ALTER TABLE `user_types_users`
 -- AUTO_INCREMENT pour la table `offers`
 --
 ALTER TABLE `offers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `skills`
@@ -349,13 +319,13 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT pour la table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `transaction_types`

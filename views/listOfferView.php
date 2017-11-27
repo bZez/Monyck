@@ -7,7 +7,7 @@
 <?php messageFlash(); ?>
 
 <?php
-require('models/offers.php');
+
 
 foreach (getTicketsOffers($bdd) as $of) {
     echo '<hr><h2>Offer on ' . $of['title'];

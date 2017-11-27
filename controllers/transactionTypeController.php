@@ -1,17 +1,15 @@
 <?php
+require('models/transactions.php');
+require('models/users.php');
 
 switch ($_GET['transType']) {
     case "create":
         checkPermissions('Banker');
-        include('models/transactions.php');
-        include('views/headers/loginUserView.php');
         include('views/admin/createTransactionTypeView.php');
         break;
 
     case "edit":
         checkPermissions('Banker');
-        include('views/headers/default.php');
-        require('models/transactions.php');
         include('views/admin/editTransactionTypeView.php');
         break;
 
@@ -22,17 +20,14 @@ switch ($_GET['transType']) {
 
     //Actions
     case "createAction":
-        require('models/transactions.php');
         include('do/transactionTypes/createTransactionTypeAction.php');
         break;
 
     case "editAction":
-        require('models/transactions.php');
         include('do/transactionTypes/editTransactionTypeAction.php');
         break;
 
     case "deleteAction":
-        require('models/transactions.php');
         include('do/transactionTypes/deleteTransactionTypeAction.php');
         break;
 

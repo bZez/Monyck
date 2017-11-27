@@ -18,13 +18,16 @@ else if (isset($_POST['user'])) {
 if (isset($user)) {
     foreach (getOneUser($bdd, $user) as $rs) {
         echo '<input name="id" type="hidden" value=' . $rs['id'] . '>
-              <h2>ID #' . $rs['id'] . '<br><input name="login" type="text" value=' . $rs['login'] . '><br></h2>
-              <h3><select multiple name="type[]" >';
+              <h2>ID #' . $rs['id'] . '<br><input name="login" type="text" value=' . $rs['login'] . '><br></h2>';
+              if (isAdmin()) {
+                  echo '<h3><select multiple name="type[]" >';
         foreach (getUserType($bdd) as $rs2) {
             echo '<option value="'.$rs2['id'].'">' . $rs2['type'] . '</option>';
         }
-              echo'</select><br></h3>
-              <h3><input name="fname" type="text" value=' . $rs['firstname'] . '><br></h3>
+              echo'</select><br></h3>';
+              }
+
+              echo '<h3><input name="fname" type="text" value=' . $rs['firstname'] . '><br></h3>
               <h3><input name="lname" type="text" value=' . $rs['lastname'] . '><br></h3>
               <h3><input name="bdate" type="text" value=' . $rs['birthday'] . '><br></h3>
               <h3><input name="mail" type="text" value=' . $rs['email'] . '><br></h3>

@@ -5,7 +5,10 @@
 
     <label>Amount:</label><br>
     <input class="form-control" type="number" name='amount' placeholder="Le montant de ta transaction..."
-           required="true" min="0" max=<?php echo userBalance($bdd,$_SESSION['id']) ?>><br><br>
+           required="true" min="0" <?php if (isAdmin()) {
+        echo '><br><br>';
+    } else { ?>max=<?php echo userBalance($bdd, $_SESSION['id']) ?>><?php } ?>
+
     <select class="form-control" name='transactionType'>
         <?php
         foreach (getTransactionTypeList($bdd) as $ttl) {

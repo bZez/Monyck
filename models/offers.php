@@ -21,7 +21,13 @@ function getOneTicketOfferReport($bdd,$id)
     AND t.id=o.id_ticket
     AND s.id=o.id_status
     AND r.id_offer=o.id");
-    return $result;
+}
+
+function getReportUser($bdd,$id) {
+    $result = $bdd->query("SELECT DISTINCT u.id, u.login, o.* FROM users u,offers o WHERE o.id_user_offer=u.id AND o.id=$id
+");
+    $line = $result->fetch_assoc();
+    return $line['login'];
 }
 
 function getTicketsOffers($bdd)

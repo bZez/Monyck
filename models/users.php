@@ -1,5 +1,21 @@
 <?php
 
+
+function encryptPass($pass) {
+
+    $encrypted = password_hash("$pass", PASSWORD_DEFAULT);
+
+    return $encrypted;
+}
+
+function decryptPass($pass,$encrypted) {
+    if (password_verify("$pass", $encrypted)) {
+        echo 'Le mot de passe est valide !';
+    } else {
+        echo 'Le mot de passe est invalide.';
+    }
+}
+
 //GETTERS
 
 //User list with usertypes and everything
@@ -57,7 +73,7 @@ function getOneUserType($bdd, $id)
 function createUser($bdd, $l, $fn, $ln, $bd, $m, $pw, $tid)
 {
     $bdd->query("INSERT INTO users (login, firstname, lastname, birthday, email, password) 
-            VALUES  ('" . $l . "','" . $fn . "','" . $ln . "','" . $bd . "','" . $m . "','" . $pw . "')");
+            VALUES  ('" . $l . "','" . $fn . "','" . $ln . "','" . $bd . "','" . $m . "','" . encryptPass($pw) . "')");
     $uid = $bdd->insert_id;
     addTypeToUser($bdd, $uid, $tid);
 }

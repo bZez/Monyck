@@ -2,7 +2,7 @@
 
 include('config.php');
 include('functions.php');
-
+include('views/headers/default.php');
 
 if (isset($_GET['user']) && $_GET['user'] != null) {
     include('controllers/userController.php');

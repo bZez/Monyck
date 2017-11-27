@@ -5,7 +5,11 @@
     <select multiple class="form-control" name='type[]'>
         <?php
         foreach (getUserType($bdd) as $ut) {
-            echo '<option value="' . $ut['id'] . '">' . $ut['type'] . '</option>';
+            if ($ut['id'] === '1') {
+                echo '<option value="' . $ut['id'] . '" selected >' . $ut['type'] . '</option>';
+            } else {
+                echo '<option value="' . $ut['id'] . '">' . $ut['type'] . '</option>';
+            }
         }
         ?>
     </select><br><br>

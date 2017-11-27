@@ -6,7 +6,6 @@
 <?php messageFlash(); ?>
 
 <?php
-require('models/tickets.php');
 foreach (getSkills($bdd) as $sk) {
     echo '<h2>#' . $sk['id'] . ' ' . $sk['language'];
 
